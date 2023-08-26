@@ -42,11 +42,9 @@ export const FeatureSection = () => {
       <h2 className="text-2xl text-brand-100 font-sb tracking-[-1px] mb-5">
         Features
       </h2>
-      <div className="flex flex-wrap items-center gap-[50px]">
+      <div className="flex flex-wrap  justify-center gap-[50px]">
         <div className="flex flex-col  gap-5 p-4 w-[300px] bg-gradient-to-r from-dark-700 to-dark-800 rounded-md ">
-          <h2 className="text-sm font-sb yellow-gradient-text">
-            Expense Tracking
-          </h2>
+          <h2 className="text-sm font-sb text-text-200">Expense Tracking</h2>
           <p className="text-text-500 font-l text-3xs leading-[150%]">
             Expense tracking in a Budget Management System lets users closely
             monitor transactions, categorize income and expenses, and get
@@ -56,47 +54,43 @@ export const FeatureSection = () => {
           </p>
         </div>
         <div className="flex flex-col  gap-5 p-4 w-[300px] bg-gradient-to-r from-dark-700 to-dark-800 rounded-md">
-          <h2 className="text-sm font-sb yellow-gradient-text">
-            Real-time Updates
-          </h2>
+          <h2 className="text-sm font-sb text-text-200">Real-time Updates</h2>
           <p className="text-text-500 font-l text-3xs leading-[150%]">
-            Expense tracking in a Budget Management System lets users closely
-            monitor transactions, categorize income and expenses, and get
-            real-time financial updates. This tool promotes budget adherence,
-            fosters financial awareness, and empowers informed decision-making,
-            goal-setting, and record-keeping.
+            The Budget Management System provides real-time updates on financial
+            transactions, enabling users to effortlessly track their spending in
+            the moment. This feature ensures users are constantly informed about
+            their financial activities, helping them maintain control over their
+            expenses and make informed decisions promptly.
           </p>
         </div>
         <div className="flex flex-col  gap-5 p-4 w-[300px] bg-gradient-to-r from-text-200 to-text-500 rounded-md ">
           <h2 className="text-sm font-sb text-dark-800">Goal Setting</h2>
           <p className="text-dark-700 font-l text-3xs leading-[150%]">
-            Expense tracking in a Budget Management System lets users closely
-            monitor transactions, categorize income and expenses, and get
-            real-time financial updates. This tool promotes budget adherence,
-            fosters financial awareness, and empowers informed decision-making,
-            goal-setting, and record-keeping.
+            Goal Setting is a pivotal feature of the Budget Management System
+            that enables users to set clear financial objectives. This tool
+            guides individuals in outlining their short-term and long-term
+            goals, whether it's saving for a major purchase, building an
+            emergency fund, or paying off debt. By providing a structured
+            framework for goal setting.
           </p>
         </div>
-        <div className="flex flex-col  gap-5 p-4 w-[300px] bg-gradient-to-r from-text-200 to-text-500 rounded-md ">
+        <div className="flex flex-col  gap-5 p-4 w-[350px] bg-gradient-to-r from-text-200 to-text-500 rounded-md ">
           <h2 className="text-sm font-sb text-dark-800">Security</h2>
           <p className="text-dark-700 font-l text-3xs leading-[150%]">
-            Expense tracking in a Budget Management System lets users closely
-            monitor transactions, categorize income and expenses, and get
-            real-time financial updates. This tool promotes budget adherence,
-            fosters financial awareness, and empowers informed decision-making,
-            goal-setting, and record-keeping.
+            The Budget Management System prioritizes security by employing
+            encryption and password protection to shield users' financial data.
+            This ensures a safe digital space where users can confidently manage
+            their finances. With a focus on data security, the system boosts
+            user confidence.
           </p>
         </div>
-        <div className="flex flex-col  gap-5 p-4 w-[300px] bg-gradient-to-r from-dark-700 to-dark-800 rounded-md ">
-          <h2 className="text-sm font-sb yellow-gradient-text">
-            Expense Tracking
-          </h2>
+        <div className="flex flex-col  gap-5 p-4 w-[350px] bg-gradient-to-r from-dark-700 to-dark-800 rounded-md ">
+          <h2 className="text-sm font-sb text-text-200"> Budget Creation</h2>
           <p className="text-text-500 font-l text-3xs leading-[150%]">
-            Expense tracking in a Budget Management System lets users closely
-            monitor transactions, categorize income and expenses, and get
-            real-time financial updates. This tool promotes budget adherence,
-            fosters financial awareness, and empowers informed decision-making,
-            goal-setting, and record-keeping.
+            Budget Creation in the Budget Management System empowers users to
+            personalize budgets based on financial goals. Define goals, allocate
+            funds to categories, set limits, and proactively manage finances for
+            success. Promotes smart spending and progress tracking.
           </p>
         </div>
       </div>
