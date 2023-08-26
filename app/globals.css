@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .modal-overlay {
+    @apply absolute top-0 hidden max-rg:flex w-full h-[100vh] bg-[rgb(0,0,0,.5)] z-[5];
+  }
+}
