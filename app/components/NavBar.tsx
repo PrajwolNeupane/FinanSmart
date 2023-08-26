@@ -1,6 +1,7 @@
 "use client";
 import { BiMoneyWithdraw, BiMenu } from "react-icons/bi";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export const NavBar = () => {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
@@ -24,9 +25,11 @@ export const NavBar = () => {
           <h2 className="text-3xs font-r text-text-200">Home</h2>
           <h2 className="text-3xs font-r text-text-300">Finan Smart</h2>
           <h2 className="text-3xs font-r text-text-300">Finan Smart</h2>
-          <button className=" text-4xs font-r text-text-200 rounded-md  border-text-200">
-            Log In
-          </button>
+          <Link href={'/login'}>
+            <button className=" text-4xs font-r text-text-200 rounded-md  border-text-200">
+              Log In
+            </button>
+          </Link>
           <button className="button-solid text-4xs font-sb bg-text-200 hover:bg-text-100 text-dark-800 ">
             Sign Up
           </button>
