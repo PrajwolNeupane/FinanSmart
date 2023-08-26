@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.gradient-text {
+  background: linear-gradient(to right, rgb(215, 215, 215), #ebf757);
+  -webkit-background-clip: text; /* For Safari/WebKit browsers */
+  background-clip: text;
+  color: transparent;
+}
+
 @layer components {
   .modal-overlay {
     @apply absolute top-0 hidden max-rg:flex w-full h-[100vh] bg-[rgb(0,0,0,.5)] z-[5];
+  }
+  .button-solid {
+    @apply px-10 py-2 rounded-md;
+  }
+  .yellow-gradient-text {
+    @apply leading-[120%] bg-gradient-to-r from-text-300 to-brand-700 text-transparent bg-clip-text;
   }
 }

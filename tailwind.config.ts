@@ -19,6 +19,13 @@ const config: Config = {
         "text-300": "rgb(235, 235, 235)",
         "text-400": "rgb(225, 225, 225)",
         "text-500": "rgb(215, 215, 215)",
+        "brand-700": "#ebf757",
+        "brand-600": "#f4ff70",
+        "brand-500": "#F5FF80",
+        "brand-400": "#f7ff94",
+        "brand-300": "#f7fca4",
+        "brand-200":'#f6faaf',
+        "brand-100":"#f6fabe"
       },
       fontWeight: {
         l: "400",
@@ -46,8 +53,8 @@ const config: Config = {
         lg: "1600px",
         md: "1200px",
         rg: "700px",
-        sm:'600px',
-        xs:'400px'
+        sm: "600px",
+        xs: "400px",
       },
     },
   },
