@@ -1,8 +1,9 @@
 import { BsFillCursorFill } from "react-icons/bs";
+import LineChart from "../components/LineChart";
 
 export default function Page() {
   return (
-    <div className="flex flex-col bg-dark-700 ml-[22%] w-full h-[400px] py-5 px-10 gap-5">
+    <div className="flex flex-col bg-dark-700 ml-[22%] w-[78%] py-5 px-10 gap-5">
       <div className="flex w-full items-center justify-between">
         <h1 className="text-rg font-mb text-text-200">Dashboard</h1>
         <div>
@@ -58,6 +59,8 @@ export default function Page() {
           <h1 className="text-text-300 font-mb text-rg">Rs 15,000</h1>
         </div>
       </div>
-    </div>
+      <LineChart/>
+      </div>
+
   );
 }
