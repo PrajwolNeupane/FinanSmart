@@ -1,4 +1,4 @@
-import { NavBar } from "../components/NavBar";
+import { NavBar } from "./components/NavBar";
 
 import { CeoSection, FeatureSection, HeaderSection } from "./CustomSection";
 

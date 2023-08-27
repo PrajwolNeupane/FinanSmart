@@ -1,6 +1,9 @@
 import "../globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
+import { BiMoneyWithdraw } from "react-icons/bi";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800"],
@@ -19,7 +22,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <div className="flex bg-dark-800 items-center justify-between">
+          <div className="flex flex-col px-10">
+            <Link href={"/"}>
+              <div className="flex items-center gap-1 text-text-100">
+                <BiMoneyWithdraw className="text-xl" color="white" />
+                <h2 className="font-r text-sm ">FinanSmart</h2>
+              </div>
+            </Link>
+            <Image
+              width={400}
+              height={400}
+              className="w-[90%] rotate-90 object-contain"
+              src={"/assets/header-image.png"}
+              alt="Header Image"
+            />
+          </div>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
