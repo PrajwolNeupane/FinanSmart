@@ -19,7 +19,7 @@ export const HeaderSection = () => {
           tools.
         </p>
         <Link
-          href={"/"}
+          href={"/dashboard"}
           className="bg-green-600 hover:bg-green-700 text-text-100 font-r button-solid"
         >
           Start Now
