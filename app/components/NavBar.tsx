@@ -1,10 +1,14 @@
 "use client";
 import { BiMoneyWithdraw, BiMenu } from "react-icons/bi";
+import { SignOutButton } from "@clerk/nextjs";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
+import Image from "next/image";
 
 export const NavBar = () => {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+  const { isSignedIn, user } = useUser();
 
   useEffect(() => {
     if (openDrawer) {
@@ -24,21 +28,48 @@ export const NavBar = () => {
           </div>
         </Link>
         <div className="flex items-center gap-[40px]">
-          <Link href={'/'}>
+          <Link href={"/"}>
             <h2 className="text-3xs font-r text-text-200">Home</h2>
           </Link>
-          <h2 className="text-3xs font-r text-text-300">Finan Smart</h2>
-          <h2 className="text-3xs font-r text-text-300">Finan Smart</h2>
-          <Link href={"/login"}>
-            <button className=" text-4xs font-r text-text-200 rounded-md  border-text-200">
-              Log In
-            </button>
-          </Link>
-          <Link href={"/signup"}>
-            <button className="button-solid text-4xs font-sb bg-text-200 hover:bg-text-100 text-dark-800 ">
-              Sign Up
-            </button>
-          </Link>
+          {isSignedIn ? (
+            <>
+              <div className="flex items-center gap-3">
+                <Image
+                className="w-[40px] aspect-square object-cover rounded-[100%]"
+                  src={user?.imageUrl}
+                  width={100}
+                  height={100}
+                  alt="Profile Photo"
+                />
+                <div className="flex flex-col">
+                  <h2 className="text-3xs font-r text-text-200">
+                    {user?.firstName}
+                  </h2>
+                  <p className="text-[12px] font-l text-text-400">
+                    {user?.primaryEmailAddress?.emailAddress}
+                  </p>
+                </div>
+              </div>
+              <SignOutButton>
+                <button className="button-solid text-4xs font-sb bg-text-200 hover:bg-text-100 text-dark-800 ">
+                  Logout
+                </button>
+              </SignOutButton>
+            </>
+          ) : (
+            <>
+              <Link href={"/login"}>
+                <button className=" text-4xs font-r text-text-200 rounded-md  border-text-200">
+                  Log In
+                </button>
+              </Link>
+              <Link href={"/signup"}>
+                <button className="button-solid text-4xs font-sb bg-text-200 hover:bg-text-100 text-dark-800 ">
+                  Sign Up
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
       <div className="w-full hidden max-rg:flex  px-[5%]  py-8 bg-dark-600 justify-between">
