@@ -1,28 +1,36 @@
 "use client";
 import { useState } from "react";
 import { setTotalBudget } from "@/actions/totalBudget.action";
-import { useAuth } from "@clerk/nextjs";
 
-export default function ManageForm() {
-  const [formData, setFormData] = useState<any>({});
-  const { userId } = useAuth();
+interface ManageFormProps {
+  name: string;
+  id: string;
+}
+
+export default function ManageForm({ name, id }: ManageFormProps) {
+  const [formData, setFormData] = useState<any>({
+    type: "total",
+    sepratedFor: "fee/rent",
+    amount: null,
+  });
 
   const setBudget = async () => {
-    try {
-      const response = await setTotalBudget({
-        id: userId!,
-        username: "prajwol",
-        total: 1230,
-        sepratedFor: "Clothing",
-        date: "124",
-        year: "20224",
-        month: "8",
-        week: "1",
-      });
-      console.log(response);
-    } catch (e) {
-      console.log(e);
-    }
+    console.log(formData);
+    // try {
+    //   const response = await setTotalBudget({
+    //     id: id,
+    //     username: name,
+    //     total: 1230,
+    //     sepratedFor: "Clothing",
+    //     date: "124",
+    //     year: "20224",
+    //     month: "8",
+    //     week: "1",
+    //   });
+    //   console.log(response);
+    // } catch (e) {
+    //   console.log(e);
+    // }
   };
 
   return (
@@ -33,6 +41,9 @@ export default function ManageForm() {
           id="dropdown"
           className="border border-text-500 bg-transparent px-2 py-1 rounded-md text-text-500
             cursor-pointer text-4xs"
+          onChange={(e: any) => {
+            setFormData({ ...formData, type: e.target.value });
+          }}
         >
           <option
             value="total"
@@ -54,6 +65,9 @@ export default function ManageForm() {
           id="dropdown"
           className="border border-text-500 bg-transparent px-2 py-1 rounded-md text-text-500
             cursor-pointer text-4xs"
+          onChange={(e: any) => {
+            setFormData({ ...formData, sepratedFor: e.target.value });
+          }}
         >
           <option
             value="fee/rent"
@@ -89,7 +103,13 @@ export default function ManageForm() {
       </div>
       <div className="flex gap-5">
         <h3 className="text-2xs font-l text-text-400">Amount : </h3>
-        <input type="number" />
+        <input
+          type="number"
+          placeholder="Amount"
+          onChange={(e: any) => {
+            setFormData({ ...formData, amount: e.target.value });
+          }}
+        />
       </div>
       <div className="flex gap-10">
         <button className="button-solid bg-brand-600 hover:bg-brand-700 text-3xs font-r">
