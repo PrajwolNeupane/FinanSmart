@@ -8,29 +8,39 @@ interface ManageFormProps {
 }
 
 export default function ManageForm({ name, id }: ManageFormProps) {
-  const [formData, setFormData] = useState<any>({
+  const [formData, setFormData] = useState<{
+    amount: number | null;
+    type: string;
+    sepratedFor: string;
+  }>({
     type: "total",
     sepratedFor: "fee/rent",
     amount: null,
   });
 
   const setBudget = async () => {
-    console.log(formData);
-    // try {
-    //   const response = await setTotalBudget({
-    //     id: id,
-    //     username: name,
-    //     total: 1230,
-    //     sepratedFor: "Clothing",
-    //     date: "124",
-    //     year: "20224",
-    //     month: "8",
-    //     week: "1",
-    //   });
-    //   console.log(response);
-    // } catch (e) {
-    //   console.log(e);
-    // }
+    try {
+      const currentDate = new Date();
+      const year = currentDate.getFullYear();
+      // Add 1 to the month because it's zero-based (0 = January, 1 = February, ...)
+      const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+      // Calculate the week (approximate)
+      const week = Math.ceil(currentDate.getDate() / 7);
+
+      const response = await setTotalBudget({
+        id: id,
+        username: name,
+        total: formData?.amount == null ? 0 : formData?.amount,
+        sepratedFor: formData.sepratedFor,
+        date: `${year}/${month}/${currentDate.getDate()}`,
+        year: year.toString(),
+        month: month,
+        week: week.toString(),
+      });
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -107,7 +117,7 @@ export default function ManageForm({ name, id }: ManageFormProps) {
           type="number"
           placeholder="Amount"
           onChange={(e: any) => {
-            setFormData({ ...formData, amount: e.target.value });
+            setFormData({ ...formData, amount: Number(e.target.value) });
           }}
         />
       </div>

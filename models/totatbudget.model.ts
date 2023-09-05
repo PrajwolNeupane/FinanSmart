@@ -5,7 +5,7 @@ const totalBudgetSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  totalAmount: { type: String, required: true },
+  totalAmount: { type: Number, required: true },
   date: { type: String, required: true },
   year: { type: String, required: true },
   month: { type: String, required: true },
